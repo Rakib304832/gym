@@ -23,11 +23,11 @@ const Banner = () => {
             </div>
         </div>
         </div >
-        <div className='pt-8 px-17'>
+        <div className='pt-8 px-40'>
            <span className=" text-2xl  font-extrabold uppercase tracking-wide text-white ">
                 THE LIBRARY
             </span>
-            <p className='text-xs'>Twelve lifts covering every major muscle group
+            <p className='text-xs '>Twelve lifts covering every major muscle group
             </p>
             </div>
         </div>
