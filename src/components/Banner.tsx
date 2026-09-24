@@ -2,7 +2,9 @@ import React from 'react';
 import Image from "next/image";
 const Banner = () => {
     return (
-        <div className=" mx-auto w-full max-w-7xl mt-6 rounded-3xl pt-8 px-8 bg-gray-800 p-18">
+        <div>
+           
+        <div className=" mx-auto w-full max-w-7xl mt-12 rounded-3xl pt-8 px-8 bg-gray-800 p-13">
         <div className=' flex items-center justify-between' >
             <div>
                 <h2 className=' text-lime-400 font-extrabold mb-5'>WORKOUT LIBRARY</h2>
@@ -20,6 +22,14 @@ const Banner = () => {
                      />
             </div>
         </div>
+        </div >
+        <div className='pt-8 px-17'>
+           <span className=" text-2xl  font-extrabold uppercase tracking-wide text-white ">
+                THE LIBRARY
+            </span>
+            <p className='text-xs'>Twelve lifts covering every major muscle group
+            </p>
+            </div>
         </div>
     );
 };

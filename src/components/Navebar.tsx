@@ -29,8 +29,8 @@ const Navebar = () => {
 
 
     {/* Main Navigation */}
-    <div className="hidden md:block">
-      <ul className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 p-1">
+   
+      <ul className="flex items-center gap-2  p-1">
 
         <li>
           <span className="block cursor-pointer rounded-full bg-lime-900/50 px-4 py-2 text-sm font-medium text-lime-400 transition hover:bg-lime-900/70">
@@ -45,7 +45,7 @@ const Navebar = () => {
         </li>
 
       </ul>
-    </div>
+
 
 
     {/* Right Side */}
