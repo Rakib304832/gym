@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navebar from "../components/Navebar";
 import Footer from "../components/footer";
+import GymProvider from "../app/contex/gymContex"
 
 
 const geistSans = Geist({
@@ -26,10 +27,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-black text-white" >
+      <body className="min-h-full flex flex-col bg-black text-white" suppressContentEditableWarning={true} cz-shortcut-listen="true">
         <Navebar />
-        
+        <GymProvider>
         {children}
+        </GymProvider>
         <Footer />
       </body>
     </html>

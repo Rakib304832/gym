@@ -2,9 +2,8 @@ import React from 'react';
 import Image from "next/image";
 import {notFound } from "next/navigation";
 import {Exercise} from "../../../type"
-import Link from "next/link";
-import { FiBookmark } from "react-icons/fi";
-import { BiSave } from "react-icons/bi";
+import PlanButtons from "../../Detiles/page"
+
 
 type PageProps = {
     params: Promise<{id: string}>
@@ -26,9 +25,8 @@ export default async function gymData({ params }: PageProps) {
     return (
     <main className="mx-auto max-w-[1232px] px-6 py-10"> 
     <div className="grid gap-14 md:grid-cols-2">
-      <div className="relative overflow-hidden rounded-2xl"> 
+      <div className="relative h-[480px] overflow-hidden rounded-2xl"> 
         <Image src={item.image} alt={item.name} fill className="object-cover" /> 
-        
       </div>
 
       <div className="text-white"> 
@@ -59,17 +57,9 @@ export default async function gymData({ params }: PageProps) {
             <li key={i}>{s}</li> 
           ))} 
         </ol>
-           <div className="flex gap-3 mt-4">
-    <Link href=""><button className="rounded-2xl text-black bg-lime-400 px-4 py-2 flex items-center gap-2 ">
-      <BiSave />Add to today's plan
-      </button></Link>
-    <Link href=""><button className="rounded-2xl border  text-white border-white/30 px-4 py-2 flex items-center gap-2 ">
-
-      <FiBookmark />Save for later
-      </button ></Link>
+        <PlanButtons item={item} />
+          
     </div> 
-      </div> 
-    
     </div> 
    
   </main> 

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import { BsCircleFill } from "react-icons/bs"; // fixed: "Bs0CircleFill" isn't a valid export
+import { BsCircleFill } from "react-icons/bs"; 
 import { usePathname } from "next/navigation"
 
 const Navbar = () => {
@@ -33,9 +33,9 @@ const Navbar = () => {
           <li>
            
             <Link
-              href="/"
+              href="/workout"
               className={`block cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition ${
-                pathname === "/"
+                pathname === "/workout"
                   ? "bg-lime-900/50 text-lime-400" 
                   : "text-gray-400" 
               }`}
@@ -45,13 +45,13 @@ const Navbar = () => {
           </li>
 
           <li>
-            {/* fixed: check against "/" to match the actual Link href */}
+           
             <Link
-              href="/"
-              className={`block cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition hover:bg-white/10 hover:text-white ${
-                pathname === ""
-                  ? "bg-lime-900/50 text-lime-400"
-                  : "text-gray-400"
+              href="/my-plan"
+              className={`block cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition ${
+                pathname === "/my-plan"
+                  ? "bg-lime-900/50 text-lime-400" 
+                  : "text-gray-400" 
               }`}
             >
               MyPlan
@@ -64,11 +64,11 @@ const Navbar = () => {
           <ul className="flex items-center gap-5 text-sm text-gray-300">
             <li className="flex cursor-pointer items-center gap-2 transition hover:text-white">
               <span>Plan</span>
-              <BsCircleFill className="text-xs text-lime-400" />
+              <BsCircleFill className="text-xs"/>
             </li>
             <li className="flex cursor-pointer items-center gap-2 transition hover:text-white">
               <span>Saved</span>
-              <BsCircleFill className="text-xs text-lime-400" />
+              <BsCircleFill className="text-xs "/>
             </li>
           </ul>
         </div>
@@ -92,9 +92,9 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* fixed: active state now driven by pathname instead of hardcoded */}
             <Link
-              href="/Home"
+              href="/workout"
               className={`rounded-full px-4 py-2 text-sm font-medium ${
-                pathname === "/Home"
+                pathname === "/workout"
                   ? "bg-lime-900/50 text-lime-400"
                   : "text-gray-400"
               }`}
@@ -103,16 +103,15 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="/"
+              href="/my-plan"
               className={`rounded-full px-4 py-2 text-sm font-medium ${
-                pathname === "/"
+                pathname === "/my-plan"
                   ? "bg-lime-900/50 text-lime-400"
                   : "text-gray-400"
               }`}
             >
               Saved
             </Link>
-            {/* removed: duplicate plain-text "Saved" span that followed this */}
           </div>
         </div>
       )}

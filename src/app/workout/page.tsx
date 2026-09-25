@@ -1,6 +1,6 @@
-import ExerciseCard from "../components/ExerciseCard"
-import {Exercise} from "../type"
-import Banner from "../components/Banner"
+import ExerciseCard from "../../components/ExerciseCard"
+import {Exercise} from "../../type"
+import Banner from "../../components/Banner"
 
 const gymDetails = async ():Promise<Exercise[]> => {
   const res = await fetch("https://api.abcz.workers.dev/api/fitlog")

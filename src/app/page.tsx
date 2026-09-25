@@ -1,5 +1,5 @@
 
-import HomePage from "../components/homePage"
+import HomePage from "./workout/page"
 
 
 export default async function Home() {
