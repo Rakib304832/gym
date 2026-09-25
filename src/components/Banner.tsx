@@ -9,7 +9,7 @@ const Banner = () => {
             <div>
                 <h2 className=' text-lime-400 font-extrabold mb-5'>WORKOUT LIBRARY</h2>
                <span className=" text-5xl  font-extrabold uppercase tracking-wide text-white">TRAIN WITH INTENT. LOG <br/> EVERY SET.</span>
-               <h2 className='mt-4'>FitLog is a dark, no-nonsense gym companion: pick a lift, lock It <br/> into today's plan, and watch the week's work add up.</h2>
+               <h2 className='mt-4'>FitLog is a dark, no-nonsense gym companion: pick a lift, lock It <br/> into today&apos;s plan, and watch the week&apos;s work add up.</h2>
                <button className="mt-12 rounded-md bg-lime-400 px-6 py-3 text-sm font-bold uppercase tracking-wide text-black transition hover:bg-lime-300">BROWSE WORKOUTS</button>
             </div>
             <div>
