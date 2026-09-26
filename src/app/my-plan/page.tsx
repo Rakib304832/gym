@@ -114,7 +114,7 @@ export default function MyPlanPage() {
               return (
                 <li key={item.id} className="flex flex-wrap items-center gap-3 rounded-xl border border-white/10 bg-[#14171f] p-2.5 transition hover:border-white/20 sm:flex-nowrap sm:gap-4">
                   <Link href={`/exercise/${item.id}`} className="flex min-w-0 flex-1 items-center gap-3">
-                     <div className="relative h-24 w-[100px] shrink-0 overflow-hidden rounded-md">
+                     <div className="relative h-24 w-25 shrink-0 overflow-hidden rounded-md">
                       <Image
                         src={item.image}
                         alt={item.name}

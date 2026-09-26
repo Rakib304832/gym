@@ -79,16 +79,20 @@ const Navbar = () => {
         <div className="order-3">
           <ul className="flex items-center gap-2 text-[11px] text-gray-300 sm:gap-5 sm:text-xs" aria-label="Plan counts">
             <li className="flex items-center gap-1.5 sm:gap-2">
-              <span>Plan</span>
-              <span className="min-w-6 rounded-full bg-lime-400 px-2 py-1 text-center text-xs tabular-nums text-black">
-                {todayPlan.length}
-              </span>
+              <Link href="/my-plan" className="flex items-center gap-1.5 sm:gap-2">
+                <span>Plan</span>
+                <span className="min-w-6 rounded-full bg-lime-400 px-2 py-1 text-center text-xs tabular-nums text-black">
+                  {todayPlan.length}
+                </span>
+              </Link>
             </li>
             <li className="flex items-center gap-1.5 sm:gap-2">
-              <span>Saved</span>
-              <span className="min-w-6 rounded-full bg-white/10 px-2 py-1 text-center text-xs tabular-nums text-lime-300">
-                {savedList.length}
-              </span>
+              <Link href="/my-plan" className="flex items-center gap-1.5 sm:gap-2">
+                <span>Saved</span>
+                <span className="min-w-6 rounded-full bg-white/10 px-2 py-1 text-center text-xs tabular-nums text-lime-300">
+                  {savedList.length}
+                </span>
+              </Link>
             </li>
           </ul>
         </div>
