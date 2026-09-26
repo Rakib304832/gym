@@ -116,27 +116,7 @@ const Navbar = () => {
               Workout
             </Link>
 
-            <Link
-              href="/my-plan"
-              onClick={() => setIsMenuOpen(false)}
-              className={`flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium ${
-                pathname === "/my-plan"
-                  ? "bg-lime-900/50 text-lime-400"
-                  : "text-gray-400"
-              }`}
-            >
-              My plan
-            </Link>
-            <Link
-              href="/my-plan"
-              onClick={() => setIsMenuOpen(false)}
-              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-gray-400 hover:bg-white/5 hover:text-white"
-            >
-              <span>Plan</span>
-              <span className="min-w-6 rounded-full bg-lime-400 px-2 py-1 text-center text-xs tabular-nums text-black">
-                {todayPlan.length}
-              </span>
-            </Link>
+            
             <Link
               href="/my-plan"
               onClick={() => setIsMenuOpen(false)}
