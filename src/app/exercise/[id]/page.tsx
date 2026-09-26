@@ -2,7 +2,7 @@ import React from 'react';
 import Image from "next/image";
 import {notFound } from "next/navigation";
 import {Exercise} from "../../../type"
-import PlanButtons from "../../Detiles/page"
+import PlanButtons from "../../../components/PlanButtons";
 
 
 type PageProps = {
@@ -23,9 +23,9 @@ export default async function gymData({ params }: PageProps) {
     if (!item) notFound()
 
     return (
-    <main className="mx-auto max-w-[1232px] px-6 py-10"> 
+    <main className="mx-auto max-w-308 px-6 py-10"> 
     <div className="grid gap-14 md:grid-cols-2">
-      <div className="relative h-[480px] overflow-hidden rounded-2xl"> 
+      <div className="relative h-120 overflow-hidden rounded-2xl"> 
         <Image src={item.image} alt={item.name} fill className="object-cover" /> 
       </div>
 

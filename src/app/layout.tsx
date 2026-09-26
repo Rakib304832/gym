@@ -4,6 +4,7 @@ import "./globals.css";
 import Navebar from "../components/Navebar";
 import Footer from "../components/footer";
 import GymProvider from "../app/contex/gymContex"
+import { ToastProvider } from "../components/ToastContext";
 
 
 const geistSans = Geist({
@@ -28,11 +29,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white" suppressContentEditableWarning={true} cz-shortcut-listen="true">
-        <Navebar />
         <GymProvider>
-        {children}
+          <ToastProvider>
+            <Navebar />
+            {children}
+            <Footer />
+          </ToastProvider>
         </GymProvider>
-        <Footer />
       </body>
     </html>
   );
