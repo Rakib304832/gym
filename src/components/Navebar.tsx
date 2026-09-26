@@ -127,6 +127,26 @@ const Navbar = () => {
             >
               My plan
             </Link>
+            <Link
+              href="/my-plan"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-gray-400 hover:bg-white/5 hover:text-white"
+            >
+              <span>Plan</span>
+              <span className="min-w-6 rounded-full bg-lime-400 px-2 py-1 text-center text-xs tabular-nums text-black">
+                {todayPlan.length}
+              </span>
+            </Link>
+            <Link
+              href="/my-plan"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-gray-400 hover:bg-white/5 hover:text-white"
+            >
+              <span>Saved</span>
+              <span className="min-w-6 rounded-full bg-white/10 px-2 py-1 text-center text-xs tabular-nums text-lime-300">
+                {savedList.length}
+              </span>
+            </Link>
           </div>
         </div>
       )}
