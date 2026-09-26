@@ -23,17 +23,17 @@ export default async function gymData({ params }: PageProps) {
     if (!item) notFound()
 
     return (
-    <main className="mx-auto max-w-308 px-6 py-10"> 
-    <div className="grid gap-14 md:grid-cols-2">
-      <div className="relative h-120 overflow-hidden rounded-2xl"> 
+    <main className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-10">
+    <div className="grid min-w-0 grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
+      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
         <Image src={item.image} alt={item.name} fill className="object-cover" /> 
       </div>
 
-      <div className="text-white"> 
-        <h1 className="text-4xl font-bold uppercase">{item.name}</h1> 
+      <div className="min-w-0 text-white">
+        <h1 className="break-words text-3xl font-bold uppercase sm:text-4xl">{item.name}</h1>
         <p className="mt-2 text-white/70">{item.description}</p> 
 
-        <div className="mt-4 flex gap-2"> 
+        <div className="mt-4 flex flex-wrap gap-2">
           {item.muscleGroups.map((m) => ( 
             <span key={m} className="rounded-full bg-lime-400 px-3 py-1 text-xs font-bold text-black">
               {m} 
@@ -41,14 +41,14 @@ export default async function gymData({ params }: PageProps) {
           ))} 
         </div> 
 
-        <dl className="mt-6 divide-y divide-white/10 rounded-xl bg-[#141a3a] p-4"> 
-          <div className="flex justify-between py-2"><dt>EQUIPMENT</dt><dd>{item.equipment}</dd></div> 
-          <div className="flex justify-between py-2"><dt>DIFFICULT</dt><dd>{item.difficulty}</dd></div> 
-          <div className="flex justify-between py-2"><dt>SETS</dt><dd>{item.sets} min</dd></div> 
-          <div className="flex justify-between py-2"><dt>REPS</dt><dd>{item.reps} kcal</dd></div> 
-          <div className="flex justify-between py-2"><dt>DURATION</dt><dd>{item.duration} kcal</dd></div> 
-          <div className="flex justify-between py-2"><dt>CALORIES</dt><dd>{item.caloriesBurned} kcal</dd></div> 
-          <div className="flex justify-between py-2"><dt>RATING</dt><dd>{item.rating} kcal</dd></div> 
+        <dl className="mt-6 divide-y divide-white/10 rounded-xl bg-[#141a3a] p-4">
+          <div className="grid grid-cols-2 gap-4 py-2"><dt>EQUIPMENT</dt><dd className="break-words text-right">{item.equipment}</dd></div>
+          <div className="grid grid-cols-2 gap-4 py-2"><dt>DIFFICULT</dt><dd className="break-words text-right">{item.difficulty}</dd></div>
+          <div className="grid grid-cols-2 gap-4 py-2"><dt>SETS</dt><dd className="break-words text-right">{item.sets} min</dd></div>
+          <div className="grid grid-cols-2 gap-4 py-2"><dt>REPS</dt><dd className="break-words text-right">{item.reps} kcal</dd></div>
+          <div className="grid grid-cols-2 gap-4 py-2"><dt>DURATION</dt><dd className="break-words text-right">{item.duration} kcal</dd></div>
+          <div className="grid grid-cols-2 gap-4 py-2"><dt>CALORIES</dt><dd className="break-words text-right">{item.caloriesBurned} kcal</dd></div>
+          <div className="grid grid-cols-2 gap-4 py-2"><dt>RATING</dt><dd className="break-words text-right">{item.rating} kcal</dd></div>
         </dl> 
 
         <h3 className="mt-6 font-bold">INSTRUCTIONS</h3> 

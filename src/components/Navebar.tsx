@@ -12,12 +12,23 @@ const Navbar = () => {
   const { todayPlan, savedList } = useGym();
 
   return (
-    <div className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0a0e14]/90 px-4 py-1 backdrop-blur-md sm:px-6 lg:px-8">
+    <div className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0a0e14]/90 px-3 py-2 backdrop-blur-md sm:px-6 lg:px-8">
 
-      <div className="mx-auto flex max-w-7xl items-center justify-between">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-2">
+
+        <button
+          onClick={() => setIsMenuOpen((open) => !open)}
+          className="order-1 shrink-0 rounded-lg border border-white/10 bg-white/5 p-2 text-gray-300 transition hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-300 md:hidden"
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          type="button"
+        >
+          {isMenuOpen ? <X aria-hidden="true" size={20} /> : <Menu aria-hidden="true" size={20} />}
+        </button>
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" aria-label="FitLog home">
+        <Link href="/" className="order-2 flex shrink-0 items-center gap-2 md:order-1" aria-label="FitLog home">
           <Image
             src="/logo.png"
             width={32}
@@ -31,7 +42,7 @@ const Navbar = () => {
         </Link>
 
         {/* Main Navigation */}
-        <ul className="flex items-center gap-2 p-1">
+        <ul className="order-2 hidden items-center gap-2 p-1 md:flex">
           <li>
            
             <Link
@@ -65,15 +76,15 @@ const Navbar = () => {
         </ul>
 
         {/* Right Side */}
-        <div className="hidden md:block">
-          <ul className="flex items-center gap-5 text-xs text-gray-300" aria-label="Plan counts">
-            <li className="flex items-center gap-2">
+        <div className="order-3">
+          <ul className="flex items-center gap-2 text-[11px] text-gray-300 sm:gap-5 sm:text-xs" aria-label="Plan counts">
+            <li className="flex items-center gap-1.5 sm:gap-2">
               <span>Plan</span>
               <span className="min-w-6 rounded-full bg-lime-400 px-2 py-1 text-center text-xs tabular-nums text-black">
                 {todayPlan.length}
               </span>
             </li>
-            <li className="flex items-center gap-2">
+            <li className="flex items-center gap-1.5 sm:gap-2">
               <span>Saved</span>
               <span className="min-w-6 rounded-full bg-white/10 px-2 py-1 text-center text-xs tabular-nums text-lime-300">
                 {savedList.length}
@@ -82,28 +93,17 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMenuOpen((open) => !open)}
-          className="rounded-lg border border-white/10 bg-white/5 p-2 text-gray-300 transition hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-300 md:hidden"
-          aria-label="Toggle navigation menu"
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-navigation"
-          type="button"
-        >
-          {isMenuOpen ? <X aria-hidden="true" size={20} /> : <Menu aria-hidden="true" size={20} />}
-        </button>
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div id="mobile-navigation" className="mt-3 border-t border-white/10 pt-3 md:hidden">
-          <div className="flex items-center justify-between">
+        <div id="mobile-navigation" className="absolute left-3 top-full w-48 rounded-b-lg border border-t-0 border-white/10 bg-[#0f172a] p-2 shadow-xl md:hidden">
+          <div className="flex flex-col gap-1">
             {/* fixed: active state now driven by pathname instead of hardcoded */}
             <Link
               href="/workout"
               onClick={() => setIsMenuOpen(false)}
-              className={`rounded-full px-4 py-2 text-sm font-medium ${
+              className={`w-full rounded-lg px-3 py-3 text-sm font-medium ${
                 pathname === "/workout"
                   ? "bg-lime-900/50 text-lime-400"
                   : "text-gray-400"
@@ -115,7 +115,7 @@ const Navbar = () => {
             <Link
               href="/my-plan"
               onClick={() => setIsMenuOpen(false)}
-              className={`rounded-full px-4 py-2 text-sm font-medium ${
+              className={`flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium ${
                 pathname === "/my-plan"
                   ? "bg-lime-900/50 text-lime-400"
                   : "text-gray-400"
