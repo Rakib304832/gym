@@ -1,8 +1,4 @@
 <div align="center">
-
-
-# FitLog
-
 **Browse exercises. Build your daily plan. Track every rep.**
 
 A responsive workout library and training planner built with Next.js and TypeScript.
