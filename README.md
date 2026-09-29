@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="./public/logo.svg" alt="FitLog logo" width="110" height="110" />
 
 # FitLog
 
